@@ -59,10 +59,10 @@ def display_release(product, rows, getter, at):
 
 def collect(products, previous=None, getter=api, at=None):
     at = at or NOW()
-    old = {p['id']: p for p in (previous or {}).get('products', [])}
+    old = {p['id']: p for p in (previous or {}).get('products', []) + (previous or {}).get('additionalStats', [])}
     cache, result = {}, []
     for product in products:
-        identifier, repo = product['id'], product.get('releaseRepo')
+        identifier, repo = product['id'], product.get('statsRepo') or product.get('releaseRepo')
         if not repo:
             result.append({'id': identifier, 'repository': None, 'count': None,
                            'status': 'untracked', 'updatedAt': None, 'latestRelease': None})
@@ -81,7 +81,8 @@ def collect(products, previous=None, getter=api, at=None):
                     total += count
             latest = None
             try:
-                latest = display_release(product, rows, getter, at)
+                if product.get('releaseRepo'):
+                    latest = display_release(product, rows, getter, at)
             except Exception as error:
                 print(f'{identifier}: version display unavailable ({type(error).__name__})')
             result.append({'id': identifier, 'repository': repo, 'count': total,
@@ -94,8 +95,16 @@ def collect(products, previous=None, getter=api, at=None):
                 result.append({'id': identifier, 'repository': repo, 'count': None,
                                'status': 'unavailable', 'updatedAt': None, 'latestRelease': None})
             print(f'{identifier}: collection failed ({type(error).__name__}); retained previous data')
+    # Old clients require every positive count to have a desktop releaseRepo.
+    # Keep their original products array valid, and add statistics-only sources
+    # separately. New clients merge these overrides; one fetch still suffices.
+    stats_only = {p['id'] for p in products if p.get('statsRepo') and not p.get('releaseRepo')}
+    extra = [row for row in result if row['id'] in stats_only]
+    legacy = [row if row['id'] not in stats_only else
+              {'id': row['id'], 'repository': None, 'count': None, 'status': 'untracked',
+               'updatedAt': None, 'latestRelease': None} for row in result]
     return {'schemaVersion': 1, 'metric': 'github_release_asset_downloads',
-            'generatedAt': at, 'products': result}
+            'generatedAt': at, 'products': legacy, 'additionalStats': extra}
 
 
 def atomic(path, value):
@@ -110,16 +119,17 @@ def main():
     target = ROOT/'docs/stats/downloads.json'
     previous = json.loads(target.read_text(encoding='utf-8')) if target.exists() else None
     result = collect(products, previous)
-    if not any(p['status'] == 'ok' for p in result['products']):
+    merged = {p['id']: p for p in result['products'] + result['additionalStats']}
+    if not any(p['status'] == 'ok' for p in merged.values()):
         raise RuntimeError('No repositories collected successfully; keep previous published files')
     history_path = ROOT/'docs/stats/history.json'
     history = json.loads(history_path.read_text(encoding='utf-8')) if history_path.exists() else []
     day = datetime.now(timezone(timedelta(hours=8))).date().isoformat()
     snapshots = {row['date']: row for row in history}
-    snapshots[day] = {'date': day, 'products': [{k: p[k] for k in ('id', 'count', 'status', 'updatedAt')} for p in result['products']]}
+    snapshots[day] = {'date': day, 'products': [{k: p[k] for k in ('id', 'count', 'status', 'updatedAt')} for p in merged.values()]}
     atomic(target, result)
     atomic(history_path, [snapshots[key] for key in sorted(snapshots)][-730:])
-    for row in result['products']:
+    for row in merged.values():
         print(f'{row["id"]}: {row["count"]} ({row["status"]})')
 
 

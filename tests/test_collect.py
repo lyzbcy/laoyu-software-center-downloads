@@ -9,6 +9,22 @@ def release(count=8, identifier=1, draft=False):
     return {'draft':draft,'tag_name':'v1','html_url':'https://github.com/lyzbcy/app/releases/tag/v1',
             'assets':[{'id':identifier,'name':'app.zip','download_count':count,'browser_download_url':'https://github.com/lyzbcy/app/releases/download/v1/app.zip'}]}
 class CollectorTests(unittest.TestCase):
+    def test_stats_only_skills_count_without_desktop_asset_matching(self):
+        p={'id':'skills','statsRepo':'lyzbcy/skills'}
+        calls=[]
+        def get(path): calls.append(path); return [release(72)]
+        result=c.collect([p],getter=get)
+        self.assertIsNone(result['products'][0]['count'])
+        self.assertEqual(result['additionalStats'][0]['count'],72)
+        self.assertIsNone(result['additionalStats'][0]['latestRelease'])
+        self.assertEqual(len(calls),1)
+    def test_stats_only_failure_preserves_prior_extra_row(self):
+        p={'id':'skills','statsRepo':'lyzbcy/skills'}
+        old=c.collect([p],getter=lambda path:[release(72)])
+        def fail(path): raise OSError('offline')
+        result=c.collect([p],old,getter=fail)
+        self.assertEqual(result['additionalStats'][0]['count'],72)
+        self.assertEqual(result['additionalStats'][0]['status'],'stale')
     def test_unknown_and_real_zero_are_distinct(self):
         result=c.collect([P,{'id':'web'}], getter=lambda path: [release(0)] if '?' in path else release(0))
         self.assertEqual(result['products'][0]['count'],0)

@@ -35,7 +35,8 @@
     "assetSuffix": ".zip"
   },
   {
-    "id": "miaomiao-tools"
+    "id": "miaomiao-tools",
+    "statsRepo": "lyzbcy/laoyu-miaomiao-tools"
   },
   {
     "id": "experiment-report"
