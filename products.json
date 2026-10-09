@@ -1,0 +1,75 @@
+[
+  {
+    "id": "airpods-buddy",
+    "releaseRepo": "lyzbcy/AirPods-Windows",
+    "assetName": "AirPodsBuddy-Windows.zip"
+  },
+  {
+    "id": "local-run-frontend",
+    "releaseRepo": "lyzbcy/local-run-frontend",
+    "assetPrefix": "local-run-frontend-v",
+    "assetSuffix": "-win-x64-setup.exe"
+  },
+  {
+    "id": "xuhuohua",
+    "releaseRepo": "lyzbcy/xuhuohua",
+    "assetName": "xuhuohua-windows-x64.zip"
+  },
+  {
+    "id": "sticker-maker",
+    "releaseRepo": "lyzbcy/sticker-maker",
+    "assetPrefix": "sticker-maker-win-v",
+    "assetSuffix": "-setup.exe"
+  },
+  {
+    "id": "yijian-toudi",
+    "releaseRepo": "lyzbcy/yijian-toudi",
+    "assetPrefix": "yijian-toudi-setup-",
+    "assetSuffix": ".exe",
+    "includePrereleases": true
+  },
+  {
+    "id": "laoyu-tagger",
+    "releaseRepo": "lyzbcy/laoyu-tagger",
+    "assetPrefix": "laoyu-tagger-v",
+    "assetSuffix": ".zip"
+  },
+  {
+    "id": "miaomiao-tools"
+  },
+  {
+    "id": "experiment-report"
+  },
+  {
+    "id": "fanqie-publisher"
+  },
+  {
+    "id": "douyin-comment"
+  },
+  {
+    "id": "general-knowledge"
+  },
+  {
+    "id": "computer-knowledge"
+  },
+  {
+    "id": "os-study"
+  },
+  {
+    "id": "gaokao-time-machine"
+  },
+  {
+    "id": "jiahao-test"
+  },
+  {
+    "id": "laoyu-sync",
+    "releaseRepo": "lyzbcy/laoyu-sync",
+    "assetPrefix": "laoyu-sync-",
+    "assetSuffix": "-win-x64.zip"
+  },
+  {
+    "id": "laoyu-screen-switch",
+    "releaseRepo": "lyzbcy/laoyu-screen-switch-downloads",
+    "assetName": "LaoyuScreenSwitch-Windows.zip"
+  }
+]

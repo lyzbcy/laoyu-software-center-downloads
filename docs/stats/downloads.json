@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "metric": "github_release_asset_downloads",
+  "generatedAt": "2026-10-09T07:19:44.960762+00:00",
+  "products": [
+    {
+      "id": "airpods-buddy",
+      "repository": "lyzbcy/AirPods-Windows",
+      "count": 556,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "1.9.21",
+        "name": "AirPodsBuddy-Windows.zip",
+        "url": "https://github.com/lyzbcy/AirPods-Windows/releases/download/v1.9.21/AirPodsBuddy-Windows.zip",
+        "sha256": "a2fec2210a885565c09427ee78eee69ccb519b67306663cfe99a7dddb356bc9f",
+        "page": "https://github.com/lyzbcy/AirPods-Windows/releases/tag/v1.9.21",
+        "notes": "v1.9.21",
+        "prerelease": false,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    },
+    {
+      "id": "local-run-frontend",
+      "repository": "lyzbcy/local-run-frontend",
+      "count": 15,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "0.4.0",
+        "name": "local-run-frontend-v0.4.0-win-x64-setup.exe",
+        "url": "https://github.com/lyzbcy/local-run-frontend/releases/download/v0.4.0/local-run-frontend-v0.4.0-win-x64-setup.exe",
+        "sha256": "2453ab03a9a510df1bcbf10fed1b4edb2272ace1c927cdb9b8288cfdf6fa351b",
+        "page": "https://github.com/lyzbcy/local-run-frontend/releases/tag/v0.4.0",
+        "notes": "v0.4.0 · macOS 与 Windows 正式版",
+        "prerelease": false,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    },
+    {
+      "id": "xuhuohua",
+      "repository": "lyzbcy/xuhuohua",
+      "count": 55,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": null
+    },
+    {
+      "id": "sticker-maker",
+      "repository": "lyzbcy/sticker-maker",
+      "count": 15,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": null
+    },
+    {
+      "id": "yijian-toudi",
+      "repository": "lyzbcy/yijian-toudi",
+      "count": 12,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "0.5.1",
+        "name": "yijian-toudi-setup-0.5.1.exe",
+        "url": "https://github.com/lyzbcy/yijian-toudi/releases/download/v0.5.1/yijian-toudi-setup-0.5.1.exe",
+        "sha256": "521d24acc447a7ff2bd848cede145b05e10fe17756cdab8704cf6472462847e6",
+        "page": "https://github.com/lyzbcy/yijian-toudi/releases/tag/v0.5.1",
+        "notes": "v0.5.1 Windows x64 测试预发布",
+        "prerelease": true,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    },
+    {
+      "id": "laoyu-tagger",
+      "repository": "lyzbcy/laoyu-tagger",
+      "count": 2,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "2.14.2",
+        "name": "laoyu-tagger-v2.14.2.zip",
+        "url": "https://github.com/lyzbcy/laoyu-tagger/releases/download/v2.14.2/laoyu-tagger-v2.14.2.zip",
+        "sha256": "11d8ae4ee201a5442a3874a23d2ec904bef80e46109a024be974f8ff3f014b26",
+        "page": "https://github.com/lyzbcy/laoyu-tagger/releases/tag/v2.14.2",
+        "notes": "v2.14.2 · 原名认领 + 溯源导出 + 小白三件套",
+        "prerelease": false,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    },
+    {
+      "id": "miaomiao-tools",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "experiment-report",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "fanqie-publisher",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "douyin-comment",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "general-knowledge",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "computer-knowledge",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "os-study",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "gaokao-time-machine",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "jiahao-test",
+      "repository": null,
+      "count": null,
+      "status": "untracked",
+      "updatedAt": null,
+      "latestRelease": null
+    },
+    {
+      "id": "laoyu-sync",
+      "repository": "lyzbcy/laoyu-sync",
+      "count": 44,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "0.3.6",
+        "name": "laoyu-sync-0.3.6-win-x64.zip",
+        "url": "https://github.com/lyzbcy/laoyu-sync/releases/download/v0.3.6/laoyu-sync-0.3.6-win-x64.zip",
+        "sha256": "d2f144477eaaa2e18a561c9dcf8e2c95bb6d577bbeb110d0f82e03a4d27d2c05",
+        "page": "https://github.com/lyzbcy/laoyu-sync/releases/tag/v0.3.6",
+        "notes": "捞鱼同步小助手 0.3.6 · 修复现有引擎访问凭据识别",
+        "prerelease": false,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    },
+    {
+      "id": "laoyu-screen-switch",
+      "repository": "lyzbcy/laoyu-screen-switch-downloads",
+      "count": 48,
+      "status": "ok",
+      "updatedAt": "2026-10-09T07:19:44.960762+00:00",
+      "latestRelease": {
+        "version": "1.1.0",
+        "name": "LaoyuScreenSwitch-Windows.zip",
+        "url": "https://github.com/lyzbcy/laoyu-screen-switch-downloads/releases/download/v1.1.0/LaoyuScreenSwitch-Windows.zip",
+        "sha256": "53f521721faaf7dd223b108105b799b5dcab78e2a77258b563457505f31a2e8a",
+        "page": "https://github.com/lyzbcy/laoyu-screen-switch-downloads/releases/tag/v1.1.0",
+        "notes": "捞鱼屏幕开关 1.1.0 · Windows 与 Mac",
+        "prerelease": false,
+        "checkedAt": "2026-10-09T07:19:44.960762+00:00"
+      }
+    }
+  ]
+}
