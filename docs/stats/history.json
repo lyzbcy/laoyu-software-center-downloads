@@ -111,45 +111,45 @@
     "products": [
       {
         "id": "airpods-buddy",
-        "count": 563,
+        "count": 564,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "local-run-frontend",
         "count": 15,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "xuhuohua",
         "count": 55,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "sticker-maker",
         "count": 15,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "yijian-toudi",
         "count": 12,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "laoyu-tagger",
         "count": 2,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "miaomiao-tools",
         "count": 73,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "experiment-report",
@@ -203,19 +203,19 @@
         "id": "laoyu-sync",
         "count": 44,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "laoyu-screen-switch",
         "count": 49,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       },
       {
         "id": "paid-to-watch",
         "count": 0,
         "status": "ok",
-        "updatedAt": "2026-10-10T06:25:01.407847+00:00"
+        "updatedAt": "2026-10-10T06:27:53.319075+00:00"
       }
     ]
   }
