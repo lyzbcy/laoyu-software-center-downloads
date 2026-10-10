@@ -87,5 +87,11 @@
     "additionalStatsRepos": [
       "lyzbcy/paid-to-watch"
     ]
+  },
+  {
+    "id": "nettools",
+    "releaseRepo": "lyzbcy/nettools",
+    "assetPrefix": "nettools-",
+    "assetSuffix": "-win-x64.zip"
   }
 ]
