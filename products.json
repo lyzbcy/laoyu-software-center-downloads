@@ -72,5 +72,11 @@
     "id": "laoyu-screen-switch",
     "releaseRepo": "lyzbcy/laoyu-screen-switch-downloads",
     "assetName": "LaoyuScreenSwitch-Windows.zip"
+  },
+  {
+    "id": "paid-to-watch",
+    "releaseRepo": "lyzbcy/paid-to-watch",
+    "assetPrefix": "paid-to-watch-",
+    "assetSuffix": "-win-x64.zip"
   }
 ]
