@@ -39,13 +39,19 @@
     "statsRepo": "lyzbcy/laoyu-miaomiao-tools"
   },
   {
-    "id": "experiment-report"
+    "id": "experiment-report",
+    "releaseRepo": "lyzbcy/experiment-report-skill",
+    "assetName": "experiment-report-skill.zip"
   },
   {
-    "id": "fanqie-publisher"
+    "id": "fanqie-publisher",
+    "releaseRepo": "lyzbcy/fanqie-publisher",
+    "assetName": "fanqie-publisher-skill.zip"
   },
   {
-    "id": "douyin-comment"
+    "id": "douyin-comment",
+    "releaseRepo": "lyzbcy/douyin-comment-automation",
+    "assetName": "douyin-comment-automation-skill.zip"
   },
   {
     "id": "general-knowledge"
