@@ -75,8 +75,11 @@
   },
   {
     "id": "paid-to-watch",
-    "releaseRepo": "lyzbcy/paid-to-watch",
-    "assetPrefix": "paid-to-watch-",
-    "assetSuffix": "-win-x64.zip"
+    "releaseRepo": "lyzbcy/laoyu-desk-tv",
+    "assetPrefix": "laoyu-desk-tv-",
+    "assetSuffix": "-win-x64.zip",
+    "additionalStatsRepos": [
+      "lyzbcy/paid-to-watch"
+    ]
   }
 ]

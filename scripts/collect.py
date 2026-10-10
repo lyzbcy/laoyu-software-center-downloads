@@ -72,13 +72,19 @@ def collect(products, previous=None, getter=api, at=None):
                 cache[repo] = release_list(repo, getter)
             rows = cache[repo]
             seen, total = set(), 0
-            for release in rows:
-                for asset in release['assets']:
-                    count = asset['download_count']
-                    if asset['id'] in seen or type(count) is not int or count < 0:
-                        raise ValueError('Invalid or duplicate asset')
-                    seen.add(asset['id'])
-                    total += count
+            # Keep historical/old-client downloads after a public brand migration.
+            # Repositories share the cache; repeated repository entries count once.
+            repositories = list(dict.fromkeys([repo] + product.get('additionalStatsRepos', [])))
+            for source in repositories:
+                if source not in cache:
+                    cache[source] = release_list(source, getter)
+                for release in cache[source]:
+                    for asset in release['assets']:
+                        key, count = (source, asset['id']), asset['download_count']
+                        if key in seen or type(count) is not int or count < 0:
+                            raise ValueError('Invalid or duplicate asset')
+                        seen.add(key)
+                        total += count
             latest = None
             try:
                 if product.get('releaseRepo'):

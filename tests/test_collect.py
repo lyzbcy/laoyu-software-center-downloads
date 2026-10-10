@@ -9,6 +9,17 @@ def release(count=8, identifier=1, draft=False):
     return {'draft':draft,'tag_name':'v1','html_url':'https://github.com/lyzbcy/app/releases/tag/v1',
             'assets':[{'id':identifier,'name':'app.zip','download_count':count,'browser_download_url':'https://github.com/lyzbcy/app/releases/download/v1/app.zip'}]}
 class CollectorTests(unittest.TestCase):
+    def test_brand_migration_counts_both_channels_once_and_uses_new_release(self):
+        p={**P,'additionalStatsRepos':['lyzbcy/legacy','lyzbcy/legacy','lyzbcy/app']}
+        calls=[]
+        def get(path):
+            calls.append(path)
+            return [release(5 if path.startswith('lyzbcy/legacy/') else 8)] if '?' in path else release(8)
+        row=c.collect([p],getter=get)['products'][0]
+        self.assertEqual(row['count'],13)
+        self.assertEqual(row['repository'],'lyzbcy/app')
+        self.assertEqual(sum('legacy/releases?' in call for call in calls),1)
+        self.assertEqual(row['latestRelease']['name'],'app.zip')
     def test_stats_only_skills_count_without_desktop_asset_matching(self):
         p={'id':'skills','statsRepo':'lyzbcy/skills'}
         calls=[]
