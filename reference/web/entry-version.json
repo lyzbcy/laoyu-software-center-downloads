@@ -1,0 +1,10 @@
+{
+  "version": "1.21.0",
+  "updatedAt": "2026-10-11",
+  "changelog": [
+    {
+      "date": "2026-10-11",
+      "text": "新增捞鱼的网络工具 5.0.0，Windows / Mac 分芯片 ZIP 与六个正式公开包。网络检查、按故障修复及可选保活；新增一级一键刷新与防重复刷新检查。软件中心同步正式公开版 Windows 0.8.7 / Mac 0.9.3，接入网络工具 5.0.0；Mac 按 Apple Silicon / Intel 分别提供 DMG / ZIP。"
+    }
+  ]
+}
