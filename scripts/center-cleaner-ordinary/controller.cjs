@@ -1,0 +1,24 @@
+'use strict';
+// Runs unchanged frozen packaged acceptance code in the OS-created ordinary profile/desktop.
+const fs=require('node:fs'),fsp=fs.promises,path=require('node:path'),os=require('node:os'),cp=require('node:child_process'),assert=require('node:assert/strict'),bridge=require('./center-cleaner-bridge.cjs');
+async function main(){
+ assert(process.platform==='win32'&&process.env.GITHUB_ACTIONS==='true'&&process.env.CI==='true'&&process.env.CLEANER_STANDARD_USER_CI==='1');
+ const root=path.resolve(__dirname,'..'),out=path.join(root,'verification/core'),report={status:'failed',scope:'frozen packaged software center normal UI to formal original cleaner package, ordinary OS profile/owned nonce desktop; no product overlays'},before={TEMP:process.env.TEMP,TMP:process.env.TMP,HOME:process.env.HOME,USERPROFILE:process.env.USERPROFILE};let native,temp;
+ try{
+  const identity=JSON.parse(bridge.ps(['-ExecutionPolicy','Bypass','-File',path.join(__dirname,'cleaner-restricted-probe.ps1'),'-Inspect']).replace(/^\uFEFF/,''));bridge.assertIdentity(identity,process.env,os.homedir());report.identity=identity;
+  const windows=require('../src/platform/windows-native.cjs'),policy=require('../src/core/path-policy.cjs');native=windows.getDefaultWindowsBridge();const home=await windows.getCurrentHome();assert.equal(home,identity.profile);await policy.validateHome(home);report.productionHomeAccepted=true;report.ancestors=[];
+  for(const rel of ['AppData','AppData/Local']){const file=path.join(home,...rel.split('/')),proof=await native.inspect(file);assert(proof.ordinary&&!proof.reparse&&proof.type==='directory'&&proof.ownedByCurrentUser);report.ancestors.push({file,proof});}
+  await fsp.mkdir(os.tmpdir(),{recursive:true});const canonical=await fsp.realpath(os.tmpdir()),relative=path.relative(home,canonical);assert(relative&&relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative),'ORIGINAL_OS_TEMP_OUTSIDE_OWN_PROFILE');temp=await fsp.mkdtemp(path.join(canonical,'center-ordinary-'));assert.equal(await fsp.realpath(temp),temp);report.canonicalOSTemp=canonical;report.stage=temp;
+  const zip=path.join(temp,bridge.CENTER.name);await fsp.copyFile(path.join(root,'center-input',bridge.CENTER.name),zip,fs.constants.COPYFILE_EXCL);bridge.verifyBytes(await fsp.readFile(zip),bridge.CENTER);const source=path.join(temp,'bootstrap');bridge.expand(zip,source);const app=path.join(source,'捞鱼软件中心-0.8.12-win-x64/resources/app'),pkg=JSON.parse(await fsp.readFile(path.join(app,'package.json'),'utf8'));assert.equal(pkg.name,'laoyu-software-center');assert.equal(pkg.version,bridge.CENTER.version);
+  const tokenPath=path.join(root,'center-input/.metadata-token'),stat=await fsp.lstat(tokenPath);assert(stat.isFile()&&!stat.isSymbolicLink()&&stat.nlink===1);const token=await fsp.readFile(tokenPath,'utf8');assert(token.length>10&&token.length<4096&&!/[\r\n\x00]/.test(token));
+  const env={...process.env,RUNNER_TEMP:temp,CENTER_CANDIDATE_ZIP:zip,CENTER_CANDIDATE_SHA256:bridge.CENTER.sha256,CENTER_CANDIDATE_SIZE:String(bridge.CENTER.size),CLEANER_VERSION:bridge.CLEANER.version,CLEANER_SHA256:bridge.CLEANER.sha256,CLEANER_SIZE:String(bridge.CLEANER.size),LAOYU_CI_GITHUB_TOKEN:token};for(const key of ['GH_TOKEN','GITHUB_TOKEN','CENTER_METADATA_TOKEN','ACTIONS_RUNTIME_TOKEN','ELECTRON_RUN_AS_NODE'])delete env[key];
+  const log=await fsp.open(path.join(out,'center-cleaner-controller.log'),'wx');try{cp.execFileSync(process.execPath,[path.join(app,'scripts/ci-cleaner-product.cjs')],{cwd:app,env,stdio:['ignore',log.fd,log.fd],timeout:55*60000,windowsHide:false});}finally{await log.close();delete env.LAOYU_CI_GITHUB_TOKEN;}
+  const suites=(await fsp.readdir(temp)).filter(n=>n.startsWith('center-laoyu-disk-cleaner-'));assert.equal(suites.length,1);const actual=JSON.parse(await fsp.readFile(path.join(temp,suites[0],'report.json'),'utf8'));assert(actual.ok&&actual.cleanupConfirmed&&actual.publishedProduct&&actual.fixture===false);report.actual=actual;report.status='passed';
+ }catch(error){report.error={message:String(error.message).replace(/gh[opsu]_[A-Za-z0-9_]+/g,'[redacted]').slice(0,512),code:error.code||null};}
+ finally{
+  native?.dispose();if(temp)try{await bridge.collectEvidence(temp,path.join(out,'center-chain'));}catch{report.status='failed';report.evidenceCollectionFailed=true;}
+  assert.deepEqual({TEMP:process.env.TEMP,TMP:process.env.TMP,HOME:process.env.HOME,USERPROFILE:process.env.USERPROFILE},before);report.osProfileEnvironmentUnchanged=true;await fsp.writeFile(path.join(out,'center-cleaner-ordinary-report.json'),JSON.stringify(report,null,2)+'\n',{flag:'wx'});
+ }
+ process.exitCode=report.status==='passed'?0:1;
+}
+module.exports={main};if(require.main===module)main().catch(()=>{console.error('CENTER_ORDINARY_CONTROLLER_FAILED');process.exitCode=1;});

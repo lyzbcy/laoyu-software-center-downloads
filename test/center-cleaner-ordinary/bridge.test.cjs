@@ -1,0 +1,13 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+const bridge=require('../../scripts/center-cleaner-ordinary/bridge.cjs');
+test('download fingerprints reject changed original bytes',()=>{assert.throws(()=>bridge.verifyBytes(Buffer.from('wrong'),bridge.CENTER),/FROZEN/);});
+test('runner selector refuses unreviewed source bytes',()=>assert.throws(()=>bridge.stageRunner(Buffer.from('unreviewed')),/PINNED/));
+test('ordinary identity binds owner, medium token, logon group, nonce desktop and OS profile',()=>{const env={CLEANER_CI_EXPECTED_SID:'S-1-5-21-1',CLEANER_CI_EXPECTED_LOGON_SID:'S-1-5-5-1-2',CLEANER_CI_DESKTOP_NONCE:'a'.repeat(32),CLEANER_CI_PARENT_SESSION:'2',CLEANER_CI_OS_PROFILE:'C:\\Users\\ordinary'};const value={user:env.CLEANER_CI_EXPECTED_SID,owner:env.CLEANER_CI_EXPECTED_SID,integrity:'S-1-16-8192',adminMember:false,elevated:false,session:2,windowStation:'WinSta0',desktop:'LaoyuCleaner_'+env.CLEANER_CI_DESKTOP_NONCE,profile:env.CLEANER_CI_OS_PROFILE,groups:[{sid:env.CLEANER_CI_EXPECTED_LOGON_SID,attributes:0xc0000004}]};assert.doesNotThrow(()=>bridge.assertIdentity(value,env,value.profile));for(const patch of [{owner:'S-1-5-32-544'},{adminMember:true},{integrity:'S-1-16-12288'},{desktop:'Default'},{session:0},{groups:[]}])assert.throws(()=>bridge.assertIdentity({...value,...patch},env,value.profile));});
+test('reviewed runner extension preserves native token/environment/desktop/cleanup core',t=>{
+ const root=process.env.ORDINARY_ENV_ROOT;if(!root)return t.skip('fixed-ref checkout is supplied by workflow');
+ const source=fs.readFileSync(require('node:path').join(root,'scripts/cleaner-owned-desktop-runner.ps1')),original=source.toString('utf8'),staged=bridge.stageRunner(source).toString('utf8');
+ for(const [begin,end] of [['  static IntPtr TestEnvironment(','  // Bounded policies'],['  static SafeAccessTokenHandle ReadActualChildToken(','  static List<Dictionary<string,object>> TargetFileAccess'],['    finally {\n      // Only our suspended child','$code=[CleanerOwnedDesktopRunner]::Run']]){const from=original.indexOf(begin),to=original.indexOf(end,from+begin.length);assert(from>=0&&to>from,'pinned core section must exist');assert(staged.includes(original.slice(from,to)));}
+ assert.equal((staged.match(/centerCleanerSuite\?"center-cleaner-controller.cjs"/g)||[]).length,2);assert(staged.includes('ReadActualChildToken(token,process.Process)'));assert(staged.includes('WaitForOwnedJobExit'));assert(staged.includes('centerCleanerSuite?3600000u:fullSuite?900000u:360000u'));
+ const csharp=fs.readFileSync(require('node:path').join(root,'scripts/cleaner-owned-desktop.cs'));assert.equal(bridge.digest(csharp),bridge.PINS['cleaner-owned-desktop.cs']);
+});

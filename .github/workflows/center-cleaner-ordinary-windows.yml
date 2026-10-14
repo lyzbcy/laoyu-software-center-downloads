@@ -1,0 +1,59 @@
+name: Frozen center to formal cleaner ordinary Windows chain
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ordinary-center:
+    runs-on: windows-latest
+    timeout-minutes: 70
+    env:
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: lyzbcy/laoyu-disk-cleaner-downloads
+          ref: e315098a00a33e6d8a4642ac51d093ebc0e7e61d
+          path: ordinary-env
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - name: Verify fixed environment and pure bridge boundaries
+        env:
+          ORDINARY_ENV_ROOT: ${{ github.workspace }}/ordinary-env
+        run: node --test test/center-cleaner-ordinary/*.test.cjs
+      - name: Stage original public bytes in an independent environment checkout
+        run: node scripts/center-cleaner-ordinary/bridge.cjs prepare
+      - name: Run the unchanged frozen center suite in the original ordinary OS profile
+        shell: pwsh
+        env:
+          CENTER_METADATA_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $environmentRoot = (Resolve-Path ordinary-env).Path
+          $tokenFile = Join-Path $environmentRoot 'center-input/.metadata-token'
+          $savedWorkspace = $env:GITHUB_WORKSPACE
+          try {
+            node -e "require('node:fs').writeFileSync(process.argv[1],process.env.CENTER_METADATA_TOKEN,{flag:'wx',mode:0o600})" $tokenFile
+            if ($LASTEXITCODE -ne 0) { throw 'ONE_TIME_METADATA_INPUT_FAILED' }
+            Remove-Item Env:CENTER_METADATA_TOKEN
+            $env:GITHUB_WORKSPACE = $environmentRoot
+            $nodePath = (Get-Command node -CommandType Application).Source
+            & "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File (Join-Path $environmentRoot 'scripts/center-owned-desktop-runner.ps1') -NodeExe $nodePath -ProjectRoot $environmentRoot -CenterCleanerSuite
+            if ($LASTEXITCODE -ne 0) { throw 'CENTER_ORDINARY_CHAIN_FAILED' }
+          } finally {
+            $env:GITHUB_WORKSPACE = $savedWorkspace
+            Remove-Item Env:CENTER_METADATA_TOKEN -ErrorAction SilentlyContinue
+            if (Test-Path -LiteralPath $tokenFile) { Remove-Item -LiteralPath $tokenFile -Force }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: center-cleaner-ordinary-windows-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: warn
+          path: ordinary-env/verification/core/
