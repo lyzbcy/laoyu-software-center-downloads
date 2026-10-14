@@ -1,0 +1,42 @@
+name: Frozen installed center Windows update proof
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Exact bootstrap and explicit old-formal to new-candidate update proof
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  update:
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run normal installed UI update and native data-retention proof
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          FROZEN_MANIFEST: ${{ inputs.manifest }}
+          NATIVE_PLATFORM: win-x64
+        run: python .github/scripts/center-candidate-proof.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: center-installed-update-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/center-installed-update-evidence/**
+            ${{ runner.temp }}/center-candidate-bootstrap/**/.ci-artifacts/windows-installed-update/**
+            ${{ runner.temp }}/center-public-receipt.json

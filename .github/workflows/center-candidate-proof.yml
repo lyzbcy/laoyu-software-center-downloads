@@ -44,6 +44,7 @@ jobs:
         if: always()
         with:
           name: center-proof-${{ matrix.platform }}-${{ github.run_id }}
+          retention-days: 1
           if-no-files-found: warn
           path: |
             ${{ runner.temp }}/center-public-receipt.json

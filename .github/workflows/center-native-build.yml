@@ -1,0 +1,60 @@
+name: Frozen center native Windows candidate build
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Exact unpublished native-build bootstrap fingerprint
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '11.28.5'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check immutable publication boundaries with owned fixtures
+        run: python -m unittest discover -s tests -p test_center_native_draft.py
+      - name: Verify exact bootstrap and build native versioned candidate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          FROZEN_MANIFEST: ${{ inputs.manifest }}
+          NATIVE_PLATFORM: win-x64
+        run: python .github/scripts/center-candidate-proof.py
+      - name: Keep exact native outputs in an unpublished same-repository draft
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python .github/scripts/center-publish-native-draft.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: center-native-windows-receipts-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/center-built/*.json
+            ${{ runner.temp }}/center-built/*.txt
+            ${{ runner.temp }}/center-public-receipt.json
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: center-native-windows-emergency-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/center-built/*.exe
+            ${{ runner.temp }}/center-built/*.zip

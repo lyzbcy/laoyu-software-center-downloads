@@ -8,8 +8,9 @@ def metadata(suffix,token):
  request=urllib.request.Request('https://api.github.com/repos/'+REPO+suffix,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Cache-Control':'no-store'})
  with urllib.request.build_opener(NoRedirect).open(request,timeout=60) as response:return json.load(response)
 def run(manifest,platform,token):
- if set(manifest)!=set(['mode','tag','candidates','product']) or manifest['mode'] not in ['import-only','public-product'] or not re.fullmatch(r'center-candidate-\d{8}-[a-f0-9]{8}',manifest['tag']):raise ValueError('Invalid frozen suite')
+ if set(manifest)!=set(['mode','tag','candidates','product']) or manifest['mode'] not in ['import-only','public-product','native-build','installed-update'] or not re.fullmatch(r'center-candidate-\d{8}-[a-f0-9]{8}',manifest['tag']):raise ValueError('Invalid frozen suite')
  if platform not in ['win-x64','mac-arm64','mac-x64']:raise ValueError('Unsupported native host')
+ if manifest['mode'] in ['native-build','installed-update'] and platform!='win-x64':raise ValueError('Native builder is Windows-only')
  entry=manifest['candidates'][platform]
  if set(entry)!=set(['version','sha256','size']) or not re.fullmatch(r'\d+\.\d+\.\d+',entry['version']) or not re.fullmatch(r'[a-f0-9]{64}',entry['sha256']) or type(entry['size']) is not int or not 0<entry['size']<1024**3:raise ValueError('Invalid original candidate fingerprint')
  product=manifest['product']
@@ -17,6 +18,8 @@ def run(manifest,platform,token):
   if set(product)!=set(['id','version','assets']) or product['id'] not in ['nettools','cleaner'] or not re.fullmatch(r'\d+\.\d+\.\d+',product['version']):raise ValueError('Invalid product')
   frozen=product['assets'][platform]
   if set(frozen)!=set(['sha256','size']) or not re.fullmatch(r'[a-f0-9]{64}',frozen['sha256']) or type(frozen['size']) is not int or not 0<frozen['size']<1024**3:raise ValueError('Invalid original product fingerprint')
+ elif manifest['mode']=='installed-update':
+  if set(product)!=set(['id','oldVersion','candidate']) or product['id']!='installed-center-update' or not re.fullmatch(r'\d+\.\d+\.\d+',product['oldVersion']) or type(product['candidate']) is not bool or tuple(map(int,product['oldVersion'].split('.')))>=tuple(map(int,entry['version'].split('.'))):raise ValueError('Invalid installed-center update proof')
  elif product is not None:raise ValueError('Import-only has no product claim')
  root=pathlib.Path(os.environ['RUNNER_TEMP']).resolve();downloads=root/'center-candidate-download';downloads.mkdir(mode=0o700,exist_ok=False)
  name=f"laoyu-software-center-{entry['version']}-{platform}.zip";target=downloads/name
@@ -60,10 +63,29 @@ def run(manifest,platform,token):
   if platform=='win-x64':env['PSModulePath']=str(root/'missing-pwsh7-modules')
   code="require('./src/ci-candidate.cjs').importCandidate({centerVersion:require('./package.json').version,platform:process.platform,arch:process.arch}).then(value=>console.log(JSON.stringify({ok:true,gui:false,fingerprint:value.fingerprint}))).catch(error=>{console.error(error.message);process.exitCode=1})"
   subprocess.run(['node','-e',code],cwd=source,env=env,check=True)
+ elif manifest['mode']=='native-build':
+  # Bootstrap runtime is never claimed as a final version; rebuild from reviewed packaged resources.
+  for key in ['CENTER_CANDIDATE_ZIP','CENTER_CANDIDATE_SHA256','CENTER_CANDIDATE_SIZE']:env.pop(key,None)
+  subprocess.run(['pnpm','--ignore-workspace','install','--ignore-scripts','--frozen-lockfile'],cwd=source,env=env,check=True,shell=os.name=='nt')
+  code="require('./scripts/ci-cleaner-product.cjs').build({platform:'win32',arch:'x64',centerVersion:require('./package.json').version}).catch(error=>{console.error(error.message);process.exitCode=1})"
+  subprocess.run(['node','-e',code],cwd=source,env=env,check=True)
+  import shutil
+  destination=root/'center-built';destination.mkdir(mode=0o700)
+  for file in (source/'release').iterdir():
+   if file.is_file() and (file.suffix in ['.exe','.zip'] or file.name.startswith('SHA256SUMS-') or file.name=='launcher-update.json'):shutil.copy2(file,destination/file.name)
+  expected=[destination/f"laoyu-software-center-{entry['version']}-win-x64.{extension}" for extension in ['exe','zip']]
+  if any(not file.is_file() for file in expected):raise ValueError('Native final Windows package set incomplete')
+  records=[{'name':file.name,'size':file.stat().st_size,'sha256':hashlib.sha256(file.read_bytes()).hexdigest()} for file in expected]
+  (destination/'native-build-receipt.json').write_text(json.dumps({'protocol':1,'formal':False,'version':entry['version'],'bootstrap':entry,'assets':records},indent=2),encoding='utf-8')
+ elif manifest['mode']=='installed-update':
+  env.update({'GH_TOKEN':token,'E2E_OLD_VERSION':product['oldVersion'],'E2E_NEW_VERSION':entry['version'],'E2E_CANDIDATE_INPUT':str(product['candidate']).lower()})
+  subprocess.run(['node',str(source/'scripts/ci-installed-update.cjs')],cwd=source,env=env,check=True)
+  import shutil
+  shutil.copytree(source/'.ci-artifacts/windows-installed-update',root/'center-installed-update-evidence')
  else:
   prefix='NETTOOLS' if product['id']=='nettools' else 'CLEANER'
   env.update({prefix+'_VERSION':product['version'],prefix+'_SHA256':frozen['sha256'],prefix+'_SIZE':str(frozen['size']),'LAOYU_CI_GITHUB_TOKEN':token})
   subprocess.run(['node',str(source/'scripts'/('ci-'+product['id']+'-product.cjs'))],cwd=source,env=env,check=True)
- evidence=root/'center-public-receipt.json';evidence.write_text(json.dumps({'protocol':1,'ok':True,'mode':manifest['mode'],'candidate':entry,'platform':platform,'draftTag':manifest['tag'],'product':product,'gui':manifest['mode']=='public-product'},ensure_ascii=False,indent=2),encoding='utf-8')
+ evidence=root/'center-public-receipt.json';evidence.write_text(json.dumps({'protocol':1,'ok':True,'mode':manifest['mode'],'candidate':entry,'platform':platform,'draftTag':manifest['tag'],'product':product,'gui':manifest['mode'] in ['public-product','installed-update']},ensure_ascii=False,indent=2),encoding='utf-8')
 if __name__=='__main__':
  run(json.loads(os.environ['FROZEN_MANIFEST']),os.environ['NATIVE_PLATFORM'],os.environ.pop('GITHUB_TOKEN'))
