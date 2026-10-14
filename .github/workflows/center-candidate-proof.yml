@@ -10,6 +10,8 @@ permissions:
   contents: read
 jobs:
   native:
+    permissions:
+      contents: write
     timeout-minutes: 60
     strategy:
       fail-fast: false

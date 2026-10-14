@@ -6,7 +6,7 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 def metadata(suffix,token):
  request=urllib.request.Request('https://api.github.com/repos/'+REPO+suffix,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Cache-Control':'no-store'})
- with urllib.request.urlopen(request,timeout=60) as response:return json.load(response)
+ with urllib.request.build_opener(NoRedirect).open(request,timeout=60) as response:return json.load(response)
 def run(manifest,platform,token):
  if set(manifest)!=set(['mode','tag','candidates','product']) or manifest['mode'] not in ['import-only','public-product'] or not re.fullmatch(r'center-candidate-\d{8}-[a-f0-9]{8}',manifest['tag']):raise ValueError('Invalid frozen suite')
  if platform not in ['win-x64','mac-arm64','mac-x64']:raise ValueError('Unsupported native host')
@@ -20,7 +20,9 @@ def run(manifest,platform,token):
  elif product is not None:raise ValueError('Import-only has no product claim')
  root=pathlib.Path(os.environ['RUNNER_TEMP']).resolve();downloads=root/'center-candidate-download';downloads.mkdir(mode=0o700,exist_ok=False)
  name=f"laoyu-software-center-{entry['version']}-{platform}.zip";target=downloads/name
- release=metadata('/releases/tags/'+manifest['tag'],token)
+ matches=[item for item in metadata('/releases?per_page=100',token) if item.get('tag_name')==manifest['tag'] and item.get('draft') is True]
+ if len(matches)!=1:raise ValueError('Exact unpublished draft not uniquely visible to this job token')
+ release=matches[0]
  if release.get('draft') is not True or release.get('tag_name')!=manifest['tag']:raise ValueError('Only the exact unpublished candidate draft is allowed')
  assets=[asset for asset in release['assets'] if asset['name']==name]
  if len(assets)!=1 or assets[0]['size']!=entry['size']:raise ValueError('Frozen candidate asset differs')
