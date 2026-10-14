@@ -8,12 +8,15 @@ def metadata(suffix,token):
  request=urllib.request.Request('https://api.github.com/repos/'+REPO+suffix,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Cache-Control':'no-store'})
  with urllib.request.build_opener(NoRedirect).open(request,timeout=60) as response:return json.load(response)
 def run(manifest,platform,token):
- if set(manifest)!=set(['mode','tag','candidates','product']) or manifest['mode'] not in ['import-only','public-product','native-build','installed-update'] or not re.fullmatch(r'center-candidate-\d{8}-[a-f0-9]{8}',manifest['tag']):raise ValueError('Invalid frozen suite')
+ if set(manifest)!=(set(['mode','tag','candidates','product'])|({'driver'} if 'driver' in manifest else set())) or manifest['mode'] not in ['import-only','public-product','native-build','installed-update'] or not re.fullmatch(r'center-candidate-\d{8}-[a-f0-9]{8}',manifest['tag']):raise ValueError('Invalid frozen suite')
  if platform not in ['win-x64','mac-arm64','mac-x64']:raise ValueError('Unsupported native host')
  if manifest['mode'] in ['native-build','installed-update'] and platform!='win-x64':raise ValueError('Native builder is Windows-only')
  entry=manifest['candidates'][platform]
  if set(entry)!=set(['version','sha256','size']) or not re.fullmatch(r'\d+\.\d+\.\d+',entry['version']) or not re.fullmatch(r'[a-f0-9]{64}',entry['sha256']) or type(entry['size']) is not int or not 0<entry['size']<1024**3:raise ValueError('Invalid original candidate fingerprint')
  product=manifest['product']
+ driver=manifest.get('driver')
+ if driver is not None:
+  if manifest['mode']!='installed-update' or set(driver)!=set(['name','sha256','size']) or driver['name']!='center-installed-update-driver.zip' or not re.fullmatch(r'[a-f0-9]{64}',driver['sha256']) or type(driver['size']) is not int or not 0<driver['size']<1024*1024:raise ValueError('Invalid external installed driver')
  if manifest['mode']=='public-product':
   if set(product)!=set(['id','version','assets']) or product['id'] not in ['nettools','cleaner'] or not re.fullmatch(r'\d+\.\d+\.\d+',product['version']):raise ValueError('Invalid product')
   frozen=product['assets'][platform]
@@ -79,13 +82,33 @@ def run(manifest,platform,token):
   (destination/'native-build-receipt.json').write_text(json.dumps({'protocol':1,'formal':False,'version':entry['version'],'bootstrap':entry,'assets':records},indent=2),encoding='utf-8')
  elif manifest['mode']=='installed-update':
   env.update({'GH_TOKEN':token,'E2E_OLD_VERSION':product['oldVersion'],'E2E_NEW_VERSION':entry['version'],'E2E_CANDIDATE_INPUT':str(product['candidate']).lower()})
-  subprocess.run(['node',str(source/'scripts/ci-installed-update.cjs')],cwd=source,env=env,check=True)
-  import shutil
-  shutil.copytree(source/'.ci-artifacts/windows-installed-update',root/'center-installed-update-evidence')
+  import shutil,zipfile,io
+  proofSource=source
+  if driver is not None:
+   matches=[a for a in release['assets'] if a['name']==driver['name']]
+   if len(matches)!=1 or matches[0]['size']!=driver['size'] or matches[0].get('digest')!='sha256:'+driver['sha256']:raise ValueError('External driver asset differs')
+   request=urllib.request.Request('https://api.github.com/repos/'+REPO+'/releases/assets/'+str(matches[0]['id']),headers={'Authorization':'Bearer '+token,'Accept':'application/octet-stream'})
+   try:response=urllib.request.build_opener(NoRedirect).open(request,timeout=60)
+   except urllib.error.HTTPError as error:
+    if error.code!=302:raise
+    url=error.headers.get('Location','');parsed=urllib.parse.urlparse(url)
+    if parsed.scheme!='https' or parsed.hostname not in ['release-assets.githubusercontent.com','objects.githubusercontent.com'] or parsed.username or parsed.password:raise ValueError('Unexpected driver redirect')
+    response=urllib.request.urlopen(urllib.request.Request(url),timeout=60)
+   with response:raw=response.read(driver['size']+1)
+   if len(raw)!=driver['size'] or hashlib.sha256(raw).hexdigest()!=driver['sha256']:raise ValueError('External driver original bytes differ')
+   archive=zipfile.ZipFile(io.BytesIO(raw));expected={'scripts/ci-installed-update.cjs','scripts/ci-installed-diagnostics.cjs'}
+   if set(archive.namelist())!=expected or len(archive.infolist())!=2 or any(item.file_size>1024*1024 or (item.external_attr>>16)&0o170000==0o120000 for item in archive.infolist()):raise ValueError('Unexpected external driver files')
+   proofSource=root/'center-installed-proof-driver';shutil.copytree(source,proofSource);archive.extractall(proofSource)
+   evidence=proofSource/'.ci-artifacts/windows-installed-update';evidence.mkdir(parents=True)
+   (evidence/'external-driver-input.json').write_text(json.dumps({'externalDriver':driver,'sourceCandidate':entry,'draftTag':manifest['tag'],'installedReleaseBytesUnchanged':True,'scope':'External diagnostic-only driver; actual public immutable old/new installers and mandatory native shortcut/UI checks unchanged'},indent=2))
+  try:subprocess.run(['node',str(proofSource/'scripts/ci-installed-update.cjs')],cwd=proofSource,env=env,check=True)
+  finally:
+   evidence=proofSource/'.ci-artifacts/windows-installed-update'
+   if evidence.is_dir():shutil.copytree(evidence,root/'center-installed-update-evidence')
  else:
   prefix='NETTOOLS' if product['id']=='nettools' else 'CLEANER'
   env.update({prefix+'_VERSION':product['version'],prefix+'_SHA256':frozen['sha256'],prefix+'_SIZE':str(frozen['size']),'LAOYU_CI_GITHUB_TOKEN':token})
   subprocess.run(['node',str(source/'scripts'/('ci-'+product['id']+'-product.cjs'))],cwd=source,env=env,check=True)
- evidence=root/'center-public-receipt.json';evidence.write_text(json.dumps({'protocol':1,'ok':True,'mode':manifest['mode'],'candidate':entry,'platform':platform,'draftTag':manifest['tag'],'product':product,'gui':manifest['mode'] in ['public-product','installed-update']},ensure_ascii=False,indent=2),encoding='utf-8')
+ evidence=root/'center-public-receipt.json';evidence.write_text(json.dumps({'protocol':1,'ok':True,'mode':manifest['mode'],'candidate':entry,'platform':platform,'draftTag':manifest['tag'],'externalDriver':driver,'product':product,'gui':manifest['mode'] in ['public-product','installed-update']},ensure_ascii=False,indent=2),encoding='utf-8')
 if __name__=='__main__':
  run(json.loads(os.environ['FROZEN_MANIFEST']),os.environ['NATIVE_PLATFORM'],os.environ.pop('GITHUB_TOKEN'))
