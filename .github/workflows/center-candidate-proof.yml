@@ -1,0 +1,53 @@
+name: Frozen center candidate proof
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Exact candidate fingerprints and import-only or public-product suite
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  native:
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-latest
+            platform: win-x64
+          - runner: macos-15
+            platform: mac-arm64
+          - runner: macos-15-intel
+            platform: mac-x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.21.0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original draft bytes and run fixed packaged proof
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          FROZEN_MANIFEST: ${{ inputs.manifest }}
+          NATIVE_PLATFORM: ${{ matrix.platform }}
+        run: python .github/scripts/center-candidate-proof.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: center-proof-${{ matrix.platform }}-${{ github.run_id }}
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/center-public-receipt.json
+            ${{ runner.temp }}/center-nettools-*/**/*.json
+            ${{ runner.temp }}/center-nettools-*/**/*.jsonl
+            ${{ runner.temp }}/center-nettools-*/**/*.png
+            ${{ runner.temp }}/center-nettools-*/**/*.log
+            ${{ runner.temp }}/center-laoyu-disk-cleaner-*/**/*.json
+            ${{ runner.temp }}/center-laoyu-disk-cleaner-*/**/*.jsonl
+            ${{ runner.temp }}/center-laoyu-disk-cleaner-*/**/*.png
+            ${{ runner.temp }}/center-laoyu-disk-cleaner-*/**/*.log
