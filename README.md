@@ -1,10 +1,10 @@
-# 捞鱼软件中心 0.8.6
+# 捞鱼软件中心
 
-[下载安装版或便携ZIP](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.8.6)
+Windows 最新正式版：**0.8.13** · [安装版与便携 ZIP](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.8.13)
 
-新增「捞鱼 C 盘清理」0.1.3测试版。Windows验证ZIP后准备，用户点击打开；Mac在产品页选择Intel/Apple Silicon包。清理器只读诊断、逐项确认、回收站恢复、迁移Prompt，不自动迁移；Mac包未公证。
+Mac 最新正式版：**0.9.6** · [Apple Silicon / Intel](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.9.6)
 
-81项回归、真实升级/可见重启、设置与关联保留通过。清理器prepare/open已验收；本机大文件CDN下载失败，使用公开服务器摘要一致的本地包测试准备，不声称本机公网下载通过。旧工作室服务器更新清单未同步。
+Windows 0.8.13 更新桌脚看电视、自动续火花、一键投递的介绍视频和离线封面。本地构建、214项测试211通过3项平台跳过，最终包正常/小窗口检查和公开包完整SHA-256核验通过。本次未重跑完整安装升级E2E。安装、下载与更新逻辑沿用正式0.8.11，源码保持私有。
 
 ---
 
