@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "metric": "github_release_asset_downloads",
-  "generatedAt": "2026-10-18T06:34:46.042964+00:00",
+  "generatedAt": "2026-10-19T06:48:21.429034+00:00",
   "products": [
     {
       "id": "airpods-buddy",
       "repository": "lyzbcy/AirPods-Windows",
-      "count": 615,
+      "count": 623,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "1.9.21",
         "name": "AirPodsBuddy-Windows.zip",
@@ -17,7 +17,7 @@
         "page": "https://github.com/lyzbcy/AirPods-Windows/releases/tag/v1.9.21",
         "notes": "v1.9.21",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -25,7 +25,7 @@
       "repository": "lyzbcy/local-run-frontend",
       "count": 15,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.4.0",
         "name": "local-run-frontend-v0.4.0-win-x64-setup.exe",
@@ -34,15 +34,15 @@
         "page": "https://github.com/lyzbcy/local-run-frontend/releases/tag/v0.4.0",
         "notes": "v0.4.0 · macOS 与 Windows 正式版",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
       "id": "xuhuohua",
       "repository": "lyzbcy/xuhuohua",
-      "count": 87,
+      "count": 89,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.14.2",
         "name": "xuhuohua-windows-x64.zip",
@@ -51,7 +51,7 @@
         "page": "https://github.com/lyzbcy/xuhuohua/releases/tag/v0.14.2",
         "notes": "v0.14.2 · 云端抖音会话维护修复",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -59,7 +59,7 @@
       "repository": "lyzbcy/sticker-maker",
       "count": 45,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.5.15",
         "name": "sticker-maker-win-v0.5.15-setup.exe",
@@ -68,7 +68,7 @@
         "page": "https://github.com/lyzbcy/sticker-maker/releases/tag/v0.5.15",
         "notes": "表情包一键制作 v0.5.15",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -76,7 +76,7 @@
       "repository": "lyzbcy/yijian-toudi",
       "count": 14,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.5.1",
         "name": "yijian-toudi-setup-0.5.1.exe",
@@ -85,7 +85,7 @@
         "page": "https://github.com/lyzbcy/yijian-toudi/releases/tag/v0.5.1",
         "notes": "v0.5.1 Windows x64 测试预发布",
         "prerelease": true,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -93,7 +93,7 @@
       "repository": "lyzbcy/laoyu-tagger",
       "count": 2,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "2.14.2",
         "name": "laoyu-tagger-v2.14.2.zip",
@@ -102,7 +102,7 @@
         "page": "https://github.com/lyzbcy/laoyu-tagger/releases/tag/v2.14.2",
         "notes": "v2.14.2 · 原名认领 + 溯源导出 + 小白三件套",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -118,7 +118,7 @@
       "repository": "lyzbcy/experiment-report-skill",
       "count": 22,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "1.0.4",
         "name": "experiment-report-skill.zip",
@@ -127,7 +127,7 @@
         "page": "https://github.com/lyzbcy/experiment-report-skill/releases/tag/v1.0.4",
         "notes": "实验报告 Skill 1.0.4 · Mac更新修复",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -135,7 +135,7 @@
       "repository": "lyzbcy/fanqie-publisher",
       "count": 13,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "1.3.5",
         "name": "fanqie-publisher-skill.zip",
@@ -144,7 +144,7 @@
         "page": "https://github.com/lyzbcy/fanqie-publisher/releases/tag/v1.3.5",
         "notes": "小说 Skill 1.3.5 · 旧入口兼容",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -152,7 +152,7 @@
       "repository": "lyzbcy/douyin-comment-automation",
       "count": 10,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.1.3",
         "name": "douyin-comment-automation-skill.zip",
@@ -161,7 +161,7 @@
         "page": "https://github.com/lyzbcy/douyin-comment-automation/releases/tag/v0.1.3",
         "notes": "抖音评论 Skill 0.1.3 · Mac更新修复",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -207,18 +207,18 @@
     {
       "id": "laoyu-sync",
       "repository": "lyzbcy/laoyu-sync",
-      "count": 73,
+      "count": 101,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
-        "version": "0.3.9",
-        "name": "laoyu-sync-0.3.9-win-x64.zip",
-        "url": "https://github.com/lyzbcy/laoyu-sync/releases/download/v0.3.9/laoyu-sync-0.3.9-win-x64.zip",
-        "sha256": "54a89bf5dc522fc223d66f4f75f27723667f702676f90326bc1ab7fb9a1d16a4",
-        "page": "https://github.com/lyzbcy/laoyu-sync/releases/tag/v0.3.9",
-        "notes": "捞鱼同步小助手 0.3.9 · Mac 桌面小精灵",
+        "version": "0.3.13",
+        "name": "laoyu-sync-0.3.13-win-x64.zip",
+        "url": "https://github.com/lyzbcy/laoyu-sync/releases/download/v0.3.13/laoyu-sync-0.3.13-win-x64.zip",
+        "sha256": "27f0e2a1a5fe93a1f2c89e077cd49fc1f2ff2ddb3417c592bd1b2febd2ec9667",
+        "page": "https://github.com/lyzbcy/laoyu-sync/releases/tag/v0.3.13",
+        "notes": "捞鱼同步小助手 0.3.13",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -226,7 +226,7 @@
       "repository": "lyzbcy/laoyu-screen-switch-downloads",
       "count": 52,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "1.1.0",
         "name": "LaoyuScreenSwitch-Windows.zip",
@@ -235,7 +235,7 @@
         "page": "https://github.com/lyzbcy/laoyu-screen-switch-downloads/releases/tag/v1.1.0",
         "notes": "捞鱼屏幕开关 1.1.0 · Windows 与 Mac",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -243,7 +243,7 @@
       "repository": "lyzbcy/laoyu-desk-tv",
       "count": 92,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "0.3.12",
         "name": "laoyu-desk-tv-0.3.12-win-x64.zip",
@@ -252,7 +252,7 @@
         "page": "https://github.com/lyzbcy/laoyu-desk-tv/releases/tag/v0.3.12",
         "notes": "0.3.12 · 捞鱼软件推荐卡片",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     },
     {
@@ -260,7 +260,7 @@
       "repository": "lyzbcy/nettools",
       "count": 47,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": {
         "version": "5.0.2",
         "name": "nettools-5.0.2-win-x64.zip",
@@ -269,7 +269,7 @@
         "page": "https://github.com/lyzbcy/nettools/releases/tag/v5.0.2",
         "notes": "捞鱼的网络工具 5.0.2 · Mac / Windows",
         "prerelease": false,
-        "checkedAt": "2026-10-18T06:34:46.042964+00:00"
+        "checkedAt": "2026-10-19T06:48:21.429034+00:00"
       }
     }
   ],
@@ -277,9 +277,9 @@
     {
       "id": "miaomiao-tools",
       "repository": "lyzbcy/laoyu-miaomiao-tools",
-      "count": 81,
+      "count": 82,
       "status": "ok",
-      "updatedAt": "2026-10-18T06:34:46.042964+00:00",
+      "updatedAt": "2026-10-19T06:48:21.429034+00:00",
       "latestRelease": null
     }
   ]
