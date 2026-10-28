@@ -93,5 +93,23 @@
     "releaseRepo": "lyzbcy/nettools",
     "assetPrefix": "nettools-",
     "assetSuffix": "-win-x64.zip"
+  },
+  {
+    "id": "laoyu-disk-cleaner",
+    "releaseRepo": "lyzbcy/laoyu-disk-cleaner-downloads",
+    "assetPrefix": "laoyu-disk-cleaner-",
+    "assetSuffix": "-win-x64.zip"
+  },
+  {
+    "id": "handdrawn-kline",
+    "releaseRepo": "lyzbcy/handdrawn-kline-downloads",
+    "assetPrefix": "HanddrawnKline-",
+    "assetSuffix": "-win-x64.exe"
+  },
+  {
+    "id": "laoyu-whale-deployer",
+    "releaseRepo": "lyzbcy/laoyu-whale-downloads",
+    "assetPrefix": "LaoyuWhaleDeployer-",
+    "assetSuffix": "-win-x64.exe"
   }
 ]
