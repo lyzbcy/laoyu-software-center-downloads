@@ -1,10 +1,8 @@
 # 捞鱼软件中心
 
-Windows 最新正式版：**0.8.13** · [安装版与便携 ZIP](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.8.13)
+最新正式版：**0.10.19** · [Windows x64 / Mac Apple Silicon / Intel 下载](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.10.19)
 
-Mac 最新正式版：**0.9.6** · [Apple Silicon / Intel](https://github.com/lyzbcy/laoyu-software-center-downloads/releases/tag/v0.9.6)
-
-Windows 0.8.13 更新桌脚看电视、自动续火花、一键投递的介绍视频和离线封面。本地构建、214项测试211通过3项平台跳过，最终包正常/小窗口检查和公开包完整SHA-256核验通过。本次未重跑完整安装升级E2E。安装、下载与更新逻辑沿用正式0.8.11，源码保持私有。
+新增捞鱼用量精灵的下载、校验、准备、识别与打开。精灵支持 Windows x64 / Mac ARM64；Intel 明确提示不支持。三平台原生构建、隔离窗口和精确身份验证通过，127个应用源文件完全一致。本机Mac已升级并实际打开精灵，Windows用户设备安装尚未验证。源码保持私有。
 
 ---
 

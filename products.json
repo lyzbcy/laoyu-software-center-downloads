@@ -111,5 +111,11 @@
     "releaseRepo": "lyzbcy/laoyu-whale-downloads",
     "assetPrefix": "LaoyuWhaleDeployer-",
     "assetSuffix": "-win-x64.exe"
+  },
+  {
+    "id": "laoyu-usage-sprite",
+    "releaseRepo": "lyzbcy/laoyu-usage-sprite-downloads",
+    "assetPrefix": "laoyu-usage-sprite-",
+    "assetSuffix": "-win32-x64.zip"
   }
 ]
