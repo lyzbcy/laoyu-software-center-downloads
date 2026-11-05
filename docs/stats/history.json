@@ -3343,63 +3343,63 @@
     "products": [
       {
         "id": "airpods-buddy",
-        "count": 788,
+        "count": 790,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "local-run-frontend",
         "count": 15,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "xuhuohua",
         "count": 139,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "sticker-maker",
         "count": 87,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "yijian-toudi",
         "count": 36,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "laoyu-tagger",
         "count": 2,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "miaomiao-tools",
         "count": 198,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "experiment-report",
         "count": 44,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "fanqie-publisher",
         "count": 13,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "douyin-comment",
         "count": 11,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "general-knowledge",
@@ -3435,49 +3435,49 @@
         "id": "laoyu-sync",
         "count": 115,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "laoyu-screen-switch",
         "count": 53,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "paid-to-watch",
         "count": 92,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "nettools",
         "count": 52,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "laoyu-disk-cleaner",
         "count": 18,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "handdrawn-kline",
         "count": 52,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "laoyu-whale-deployer",
         "count": 13,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       },
       {
         "id": "laoyu-usage-sprite",
-        "count": 5,
+        "count": 8,
         "status": "ok",
-        "updatedAt": "2026-11-05T07:09:53.009562+00:00"
+        "updatedAt": "2026-11-05T08:30:20.503794+00:00"
       }
     ]
   }
