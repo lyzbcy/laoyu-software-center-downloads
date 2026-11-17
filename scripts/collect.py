@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,8 +52,15 @@ def display_release(product, rows, getter, at):
     if not asset:
         return None
     digest = asset.get('digest') or ''
+    url = asset['browser_download_url']
+    # Installed clients validate URLs against the originally registered repository.
+    if product['releaseRepo'] == 'lyzbcy/laoyu-tagger':
+        asset_path = '/releases/download/' + quote(release['tag_name'], safe='') + '/' + quote(asset['name'], safe='')
+        renamed_repo = 'https://github.com/lyzbcy/laoyu-video-creator-studio'
+        if url == renamed_repo + asset_path:
+            url = 'https://github.com/lyzbcy/laoyu-tagger' + asset_path
     return {'version': release['tag_name'].removeprefix('v'), 'name': asset['name'],
-            'url': asset['browser_download_url'], 'sha256': digest[7:] if digest.startswith('sha256:') else None,
+            'url': url, 'sha256': digest[7:] if digest.startswith('sha256:') else None,
             'page': release['html_url'], 'notes': str(release.get('name') or '')[:160],
             'prerelease': bool(release.get('prerelease')), 'checkedAt': at}
 
