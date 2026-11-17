@@ -117,5 +117,6 @@
     "releaseRepo": "lyzbcy/laoyu-usage-sprite-downloads",
     "assetPrefix": "laoyu-usage-sprite-",
     "assetSuffix": "-win32-x64.zip"
-  }
+  },
+  {"id": "laoyu-video-quality", "releaseRepo": "lyzbcy/laoyu-video-quality-downloads", "assetPrefix": "LaoyuVideoQuality-", "assetSuffix": "-win-x64.exe"}
 ]
