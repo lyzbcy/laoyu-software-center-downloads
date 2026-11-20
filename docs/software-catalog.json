@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "id": "laoyu-video-quality",
+      "name": "捞鱼视频质量分析",
+      "summary": "导入自己的作品快照，查看留存、收藏与涨粉，用 Agent 生成带证据的创作报告。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "monitor",
+      "kind": "desktop",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/latest",
+      "releaseRepo": "lyzbcy/laoyu-video-quality-downloads",
+      "releasePage": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases",
+      "assetPrefix": "LaoyuVideoQuality-",
+      "assetSuffix": "-win-x64.exe",
+      "publishedVersion": "0.26.27",
+      "iconImage": "assets/products/laoyu-video-quality.png",
+      "videos": [],
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "fallbackRelease": {
+        "version": "0.26.27",
+        "name": "LaoyuVideoQuality-0.26.27-win-x64.exe",
+        "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.27/LaoyuVideoQuality-0.26.27-win-x64.exe",
+        "sha256": "6798aca8a203d68cef4acc79135b57d69373a37ef00bf15b998412b53f922316",
+        "sizeBytes": 147684501
+      },
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "LaoyuVideoQuality-",
+            "assetSuffix": "-mac-arm64.zip",
+            "fallbackRelease": {
+              "version": "0.26.27",
+              "name": "LaoyuVideoQuality-0.26.27-mac-arm64.zip",
+              "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.27/LaoyuVideoQuality-0.26.27-mac-arm64.zip",
+              "sha256": "d088c24f36c8385b6d31f280f1bc57612f5ba71bf158322e36dd81f61592af7f",
+              "sizeBytes": 127145308
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laoyu-usage-sprite",
+      "name": "捞鱼用量精灵",
+      "summary": "Grok 与 Codex 双圆球悬浮用量组件，随时查看剩余额度与重置时间。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "spark",
+      "kind": "desktop",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-usage-sprite-downloads",
+      "releaseRepo": "lyzbcy/laoyu-usage-sprite-downloads",
+      "releasePage": "https://github.com/lyzbcy/laoyu-usage-sprite-downloads/releases",
+      "assetPrefix": "laoyu-usage-sprite-",
+      "assetSuffix": "-win32-x64.zip",
+      "includePrereleases": false,
+      "videos": [],
+      "iconImage": "assets/products/laoyu-usage-sprite.png",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "laoyu-usage-sprite-",
+            "assetSuffix": "-mac-arm64.zip",
+            "includePrereleases": false,
+            "fallbackRelease": {
+              "version": "0.1.2",
+              "name": "laoyu-usage-sprite-0.1.2-mac-arm64.zip",
+              "url": "https://github.com/lyzbcy/laoyu-usage-sprite-downloads/releases/download/v0.1.2/laoyu-usage-sprite-0.1.2-mac-arm64.zip",
+              "sha256": "c275c5956bd6da1ee2893fa5b67dd08153f38ea5b3fbdd5809f88b19e17bdd33",
+              "sizeBytes": 126190025
+            }
+          }
+        }
+      },
+      "publishedVersion": "0.1.2",
+      "fallbackRelease": {
+        "version": "0.1.2",
+        "name": "laoyu-usage-sprite-0.1.2-win32-x64.zip",
+        "url": "https://github.com/lyzbcy/laoyu-usage-sprite-downloads/releases/download/v0.1.2/laoyu-usage-sprite-0.1.2-win32-x64.zip",
+        "sha256": "a74c65f05445b51475bf5fa1c4678ac10eb7242b5d4cd0bf3f9debd7caecbd35",
+        "sizeBytes": 161237764
+      }
+    },
+    {
+      "id": "laoyu-whale-deployer",
+      "name": "大肥鲸宠物助手",
+      "summary": "会聊天、记偏好、学习技能的桌面 QQ 宠物，支持 Codex CLI/API；当前 QQ 组件限非商业使用。",
+      "category": "学习与趣味",
+      "stage": "正式版",
+      "icon": "chat",
+      "kind": "desktop",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-whale-downloads",
+      "releaseRepo": "lyzbcy/laoyu-whale-downloads",
+      "releasePage": "https://github.com/lyzbcy/laoyu-whale-downloads/releases",
+      "assetPrefix": "LaoyuWhaleDeployer-",
+      "assetSuffix": "-win-x64.exe",
+      "includePrereleases": false,
+      "publishedVersion": "0.6.1",
+      "videos": [],
+      "iconImage": "assets/products/laoyu-whale-deployer.png",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "LaoyuWhaleDeployer-",
+            "assetSuffix": "-mac-arm64.dmg",
+            "includePrereleases": false,
+            "fallbackRelease": {
+              "version": "0.6.1",
+              "name": "LaoyuWhaleDeployer-0.6.1-mac-arm64.dmg",
+              "url": "https://github.com/lyzbcy/laoyu-whale-downloads/releases/download/v0.6.1/LaoyuWhaleDeployer-0.6.1-mac-arm64.dmg",
+              "sha256": "857e6f622e5958057618510db31aed34aab8090b5092681c5dd7b2a9eb86ec33",
+              "sizeBytes": 203455887
+            }
+          }
+        }
+      },
+      "fallbackRelease": {
+        "version": "0.6.1",
+        "name": "LaoyuWhaleDeployer-0.6.1-win-x64.exe",
+        "url": "https://github.com/lyzbcy/laoyu-whale-downloads/releases/download/v0.6.1/LaoyuWhaleDeployer-0.6.1-win-x64.exe",
+        "sha256": "92be4ed36a9b223f04b614c4c1421b7ac4a0c6f1f45f6c9417827667f290227e",
+        "sizeBytes": 192402246
+      }
+    },
+    {
+      "id": "airpods-buddy",
+      "name": "AirPods 小助手",
+      "summary": "在 Windows 上快捷连接和管理 AirPods。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "headphones",
+      "siteUrl": "https://lyzbcy.github.io/airpods-buddy.html",
+      "releaseRepo": "lyzbcy/AirPods-Windows",
+      "assetName": "AirPodsBuddy-Windows.zip",
+      "publishedVersion": "1.9.21",
+      "fallbackRelease": {
+        "version": "1.9.21",
+        "url": "https://github.com/lyzbcy/AirPods-Windows/releases/download/v1.9.21/AirPodsBuddy-Windows.zip",
+        "sha256": "a2fec2210a885565c09427ee78eee69ccb519b67306663cfe99a7dddb356bc9f",
+        "name": "AirPodsBuddy-Windows.zip"
+      },
+      "kind": "desktop",
+      "videos": [
+        {
+          "id": "7677278954927066387",
+          "title": "AirPods 小助手 · 使用演示"
+        }
+      ],
+      "iconImage": "assets/products/airpods-buddy.png",
+      "backgroundImage": "assets/video-7677278954927066387.jpg",
+      "supportedPlatforms": [
+        "win32"
+      ]
+    },
+    {
+      "id": "local-run-frontend",
+      "name": "本地运行前端项目",
+      "summary": "集中管理并一键启动本机前端项目。",
+      "category": "开发工具",
+      "stage": "正式版",
+      "icon": "code",
+      "siteUrl": "https://lyzbcy.github.io/local-run-frontend/",
+      "releaseRepo": "lyzbcy/local-run-frontend",
+      "assetPrefix": "local-run-frontend-v",
+      "assetSuffix": "-win-x64-setup.exe",
+      "publishedVersion": "0.4.0",
+      "kind": "desktop",
+      "videos": [],
+      "iconImage": "assets/products/local-run-frontend.png",
+      "fallbackRelease": {
+        "version": "0.4.0",
+        "name": "local-run-frontend-v0.4.0-win-x64-setup.exe",
+        "sha256": "2453ab03a9a510df1bcbf10fed1b4edb2272ace1c927cdb9b8288cfdf6fa351b",
+        "url": "https://github.com/lyzbcy/local-run-frontend/releases/download/v0.4.0/local-run-frontend-v0.4.0-win-x64-setup.exe"
+      },
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "local-run-frontend-v",
+            "assetSuffix": "-mac-arm64.dmg"
+          },
+          "x64": {
+            "assetPrefix": "local-run-frontend-v",
+            "assetSuffix": "-mac-x64.dmg"
+          }
+        }
+      }
+    },
+    {
+      "id": "xuhuohua",
+      "name": "自动续火花",
+      "summary": "集中管理续火花任务，让日常互动更轻松。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "flame",
+      "kind": "desktop",
+      "siteUrl": "https://lyzbcy.github.io/xuhuohua/",
+      "videos": [
+        {
+          "id": "7696722837414989065",
+          "title": "自动续火花 · QQ / 抖音自动续火"
+        }
+      ],
+      "iconImage": "assets/products/xuhuohua.png",
+      "releaseRepo": "lyzbcy/xuhuohua",
+      "publishedVersion": "0.14.0",
+      "fallbackRelease": {
+        "version": "0.14.0",
+        "name": "xuhuohua-windows-x64.zip",
+        "sha256": "1351a69ed3ccb6cf81d55cfdd35aa3779f27165683c7bb5f0209d304b72a3dee",
+        "url": "https://github.com/lyzbcy/xuhuohua/releases/download/v0.14.0/xuhuohua-windows-x64.zip",
+        "sizeBytes": 22025228
+      },
+      "assetName": "xuhuohua-windows-x64.zip",
+      "supportedPlatforms": [
+        "win32"
+      ],
+      "backgroundImage": "assets/video-7696722837414989065.jpg"
+    },
+    {
+      "id": "sticker-maker",
+      "name": "表情包一键制作",
+      "summary": "把图片变成表情包，让创作、排版和导出更简单。",
+      "category": "内容创作",
+      "stage": "正式版",
+      "icon": "layers",
+      "siteUrl": "https://lyzbcy.github.io/sticker-maker/",
+      "kind": "desktop",
+      "videos": [
+        {
+          "id": "7657593115926072639",
+          "title": "表情包一键制作 · 使用演示"
+        },
+        {
+          "id": "7651649039531822345",
+          "title": "表情包全自动制作版 · 视频演示"
+        }
+      ],
+      "iconImage": "assets/products/sticker-maker.png",
+      "backgroundImage": "assets/video-7657593115926072639.jpg",
+      "releaseRepo": "lyzbcy/sticker-maker",
+      "publishedVersion": "0.6.13",
+      "fallbackRelease": {
+        "version": "0.6.13",
+        "name": "sticker-maker-win-v0.6.13-setup.exe",
+        "url": "https://github.com/lyzbcy/sticker-maker/releases/download/v0.6.13/sticker-maker-win-v0.6.13-setup.exe",
+        "sha256": "827b8dfbc11cda5a8b0c5e7397e9bf8832bc3edc5f34714938123eb5f9f56a2e",
+        "sizeBytes": 204628266
+      },
+      "assetPrefix": "sticker-maker-win-v",
+      "assetSuffix": "-setup.exe",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "sticker-maker-mac-v",
+            "assetSuffix": ".zip",
+            "fallbackRelease": {
+              "version": "0.6.13",
+              "name": "sticker-maker-mac-v0.6.13.zip",
+              "url": "https://github.com/lyzbcy/sticker-maker/releases/download/v0.6.13/sticker-maker-mac-v0.6.13.zip",
+              "sha256": "fc48b912ba157407bd18c5de792747af39851b0461e7fd5194e1a2c27ca1a8f6",
+              "sizeBytes": 229692672
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "yijian-toudi",
+      "name": "一键投递",
+      "summary": "本地求职工作台；Windows 版仍处于测试阶段。",
+      "category": "桌面效率",
+      "stage": "测试版",
+      "icon": "briefcase",
+      "siteUrl": "https://lyzbcy.github.io/yijian-toudi/",
+      "releasePage": "https://github.com/lyzbcy/yijian-toudi/releases",
+      "kind": "desktop",
+      "videos": [
+        {
+          "id": "7696921170989370633",
+          "title": "一键投递 · 最新使用演示"
+        }
+      ],
+      "iconImage": "assets/products/yijian-toudi.png",
+      "backgroundImage": "assets/video-7696921170989370633.jpg",
+      "releaseRepo": "lyzbcy/yijian-toudi",
+      "publishedVersion": "0.5.1",
+      "fallbackRelease": {
+        "version": "0.5.1",
+        "name": "yijian-toudi-setup-0.5.1.exe",
+        "sha256": "521d24acc447a7ff2bd848cede145b05e10fe17756cdab8704cf6472462847e6",
+        "url": "https://github.com/lyzbcy/yijian-toudi/releases/download/v0.5.1/yijian-toudi-setup-0.5.1.exe"
+      },
+      "assetPrefix": "yijian-toudi-setup-",
+      "assetSuffix": ".exe",
+      "includePrereleases": true,
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "yijian-toudi-",
+            "assetSuffix": "-arm64.dmg",
+            "fallbackRelease": {
+              "version": "0.5.54",
+              "url": "https://github.com/lyzbcy/yijian-toudi/releases/download/v0.5.54/yijian-toudi-0.5.54-arm64.dmg",
+              "sha256": "90eb567cda9d521e02d61fcdab081c24f24ab022a454a4156821253dca7b639a",
+              "name": "yijian-toudi-0.5.54-arm64.dmg",
+              "sizeBytes": 126471721
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laoyu-tagger",
+      "name": "捞鱼打标工具",
+      "summary": "BGM 与音效素材整理工具；解压后按指南运行 .bat，需 Node.js。",
+      "category": "内容创作",
+      "stage": "正式版",
+      "icon": "wave",
+      "siteUrl": "https://lyzbcy.github.io/laoyu-tagger/",
+      "kind": "desktop",
+      "videos": [
+        {
+          "id": "7677276922144902427",
+          "title": "捞鱼打标工具 · 使用演示"
+        }
+      ],
+      "iconImage": "assets/products/laoyu-tagger.png",
+      "backgroundImage": "assets/video-7677276922144902427.jpg",
+      "releaseRepo": "lyzbcy/laoyu-tagger",
+      "publishedVersion": "2.14.2",
+      "fallbackRelease": {
+        "version": "2.14.2",
+        "name": "laoyu-tagger-v2.14.2.zip",
+        "sha256": "11d8ae4ee201a5442a3874a23d2ec904bef80e46109a024be974f8ff3f014b26",
+        "url": "https://github.com/lyzbcy/laoyu-tagger/releases/download/v2.14.2/laoyu-tagger-v2.14.2.zip"
+      },
+      "assetPrefix": "laoyu-tagger-v",
+      "assetSuffix": ".zip",
+      "supportedPlatforms": [
+        "win32"
+      ]
+    },
+    {
+      "id": "miaomiao-tools",
+      "statsRepo": "lyzbcy/laoyu-miaomiao-tools",
+      "name": "捞鱼妙妙工具合集",
+      "summary": "查看已发布的 Agent Skills 与使用说明。",
+      "category": "AI Skills",
+      "stage": "网页入口",
+      "icon": "spark",
+      "siteUrl": "https://lyzbcy.github.io/laoyu-miaomiao-tools/",
+      "kind": "skill",
+      "videos": [],
+      "iconLabel": "SK"
+    },
+    {
+      "id": "experiment-report",
+      "name": "实验报告助手",
+      "category": "AI Skills",
+      "kind": "skill",
+      "icon": "document",
+      "summary": "自动生成实验报告与可视化展示。",
+      "siteUrl": "https://github.com/lyzbcy/experiment-report-skill",
+      "stage": "Skill Release",
+      "videos": [
+        {
+          "id": "7656857045957676338",
+          "title": "实验报告助手 · 视频介绍"
+        }
+      ],
+      "iconLabel": "LAB",
+      "backgroundImage": "assets/video-7656857045957676338.jpg",
+      "releaseRepo": "lyzbcy/experiment-report-skill",
+      "assetName": "experiment-report-skill.zip",
+      "skill": {
+        "directory": "experiment-report-skill",
+        "prompts": [
+          {
+            "title": "真实对比实验",
+            "text": "请用 experiment-report-skill 完成 SARSA 与 Q-learning 的真实对比实验。先跑实验并展示可视化供我确认，再交付实验报告.md 和实验报告.docx，数据必须来自实际运行。"
+          }
+        ]
+      },
+      "publishedVersion": "1.0.4",
+      "fallbackRelease": {
+        "version": "1.0.4",
+        "name": "experiment-report-skill.zip",
+        "url": "https://github.com/lyzbcy/experiment-report-skill/releases/download/v1.0.4/experiment-report-skill.zip",
+        "sha256": "29cd8a6479851fe4c4ac5dbd6bb05eeac723ed0eb36ba05a7ed65b22593d8702",
+        "sizeBytes": 56275
+      },
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ]
+    },
+    {
+      "id": "fanqie-publisher",
+      "name": "小说与脚本创作",
+      "category": "AI Skills",
+      "kind": "skill",
+      "icon": "pen",
+      "summary": "从灵感到正文，查看创作与发布工作流。",
+      "siteUrl": "https://github.com/lyzbcy/fanqie-publisher",
+      "stage": "Skill Release",
+      "videos": [
+        {
+          "id": "7645977923631074586",
+          "title": "小说与脚本创作 · 视频介绍"
+        }
+      ],
+      "iconLabel": "TXT",
+      "backgroundImage": "assets/video-7645977923631074586.jpg",
+      "releaseRepo": "lyzbcy/fanqie-publisher",
+      "assetName": "fanqie-publisher-skill.zip",
+      "skill": {
+        "directory": "fanqie-publisher-skill",
+        "prompts": [
+          {
+            "title": "检查稿件，先不发布",
+            "text": "请用 fanqie-publisher-skill 检查我的小说稿、后台最新章号与下一章发布条件，整理下一章并做预检，先不要发布。需要书名、作品目录或登录时请明确告诉我。"
+          }
+        ]
+      },
+      "publishedVersion": "1.3.4",
+      "fallbackRelease": {
+        "version": "1.3.4",
+        "name": "fanqie-publisher-skill.zip",
+        "url": "https://github.com/lyzbcy/fanqie-publisher/releases/download/v1.3.4/fanqie-publisher-skill.zip",
+        "sha256": "4c583be76de61ff4b5fa58b75cb1c54466fe5daa83eeb36b00f4c3744fe560a6",
+        "sizeBytes": 92452
+      },
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ]
+    },
+    {
+      "id": "douyin-comment",
+      "name": "抖音评论自动回复",
+      "category": "AI Skills",
+      "kind": "skill",
+      "icon": "chat",
+      "summary": "了解评论回复自动化与使用方法。",
+      "siteUrl": "https://github.com/lyzbcy/douyin-comment-automation",
+      "stage": "Skill Release",
+      "videos": [
+        {
+          "id": "7659079404672322858",
+          "title": "捞鱼作品合集介绍"
+        }
+      ],
+      "iconLabel": "RE",
+      "releaseRepo": "lyzbcy/douyin-comment-automation",
+      "assetName": "douyin-comment-automation-skill.zip",
+      "skill": {
+        "directory": "douyin-comment-automation",
+        "prompts": [
+          {
+            "title": "先生成回复草稿",
+            "text": "请用 douyin-comment-automation 读取我最近一个作品的未回复评论，按轻松、礼貌的风格生成回复草稿，先不发送。只使用本次真实导出的评论；首次登录由我本人完成。"
+          }
+        ]
+      },
+      "publishedVersion": "0.1.3",
+      "fallbackRelease": {
+        "version": "0.1.3",
+        "name": "douyin-comment-automation-skill.zip",
+        "url": "https://github.com/lyzbcy/douyin-comment-automation/releases/download/v0.1.3/douyin-comment-automation-skill.zip",
+        "sha256": "0e9f7a1c0c042c9deeb89100ce2bd8753c35a15afc60a30723add460ee97574c",
+        "sizeBytes": 184203
+      },
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ]
+    },
+    {
+      "id": "general-knowledge",
+      "name": "通识知识地图",
+      "category": "学习与趣味",
+      "kind": "web",
+      "icon": "book",
+      "summary": "按主题探索知识，建立自己的理解框架。",
+      "siteUrl": "https://lyzbcy.github.io/general-knowledge/",
+      "stage": "在线体验",
+      "videos": [],
+      "iconImage": "assets/products/general-knowledge.png"
+    },
+    {
+      "id": "computer-knowledge",
+      "name": "计算机知识地图",
+      "category": "学习与趣味",
+      "kind": "web",
+      "icon": "code",
+      "summary": "把计算机知识连接成一张清晰的地图。",
+      "siteUrl": "https://lyzbcy.github.io/computer-knowledge/",
+      "stage": "在线体验",
+      "videos": [],
+      "iconLabel": "CS"
+    },
+    {
+      "id": "os-study",
+      "name": "操作系统学习",
+      "category": "学习与趣味",
+      "kind": "web",
+      "icon": "book",
+      "summary": "梳理操作系统重点，辅助课程学习与复习。",
+      "siteUrl": "https://lyzbcy.github.io/os-study/",
+      "stage": "在线体验",
+      "videos": [],
+      "iconImage": "assets/products/os-study.png"
+    },
+    {
+      "id": "gaokao-time-machine",
+      "name": "高考时光机",
+      "category": "学习与趣味",
+      "kind": "web",
+      "icon": "clock",
+      "summary": "回到那年高考，体验一段校园时光。",
+      "siteUrl": "https://lyzbcy.github.io/gaokao-time-machine/#/",
+      "stage": "在线体验",
+      "videos": [
+        {
+          "id": "7659079404672322858",
+          "title": "捞鱼作品合集介绍"
+        }
+      ],
+      "iconImage": "assets/products/gaokao-time-machine.png"
+    },
+    {
+      "id": "jiahao-test",
+      "name": "嘉豪值测试",
+      "category": "学习与趣味",
+      "kind": "web",
+      "icon": "compass",
+      "summary": "一个轻松有趣的在线小测试。",
+      "siteUrl": "https://lyzbcy.github.io/jiahao-test/",
+      "stage": "在线体验",
+      "videos": [
+        {
+          "id": "7659079404672322858",
+          "title": "捞鱼作品合集介绍"
+        }
+      ],
+      "iconImage": "assets/products/jiahao-test.png"
+    },
+    {
+      "id": "laoyu-sync",
+      "name": "捞鱼文件夹同步",
+      "summary": "中文引导电脑间同步文件，桌面小鱼实时展示状态。",
+      "category": "桌面效率",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-sync",
+      "stage": "内测版",
+      "icon": "folder",
+      "kind": "desktop",
+      "releaseRepo": "lyzbcy/laoyu-sync",
+      "assetPrefix": "laoyu-sync-",
+      "assetSuffix": "-win-x64.zip",
+      "publishedVersion": "0.3.18",
+      "fallbackRelease": {
+        "version": "0.3.18",
+        "url": "https://github.com/lyzbcy/laoyu-sync/releases/download/v0.3.18/laoyu-sync-0.3.18-win-x64.zip",
+        "sha256": "93151d88a830146439cf5b573ab6b14363ccb323a41637a21bcfa772fb47881e",
+        "name": "laoyu-sync-0.3.18-win-x64.zip",
+        "sizeBytes": 45221197
+      },
+      "videos": [],
+      "iconImage": "assets/products/laoyu-sync.png",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "laoyu-sync-",
+            "assetSuffix": "-macos-arm64.zip",
+            "fallbackRelease": {
+              "version": "0.3.18",
+              "url": "https://github.com/lyzbcy/laoyu-sync/releases/download/v0.3.18/laoyu-sync-0.3.18-macos-arm64.zip",
+              "sha256": "81976f063b100417e45f5d4cf0ec6e4879d0ebcb81cc2229a441c16772c72d7a",
+              "name": "laoyu-sync-0.3.18-macos-arm64.zip",
+              "sizeBytes": 41898823
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laoyu-screen-switch",
+      "name": "捞鱼屏幕开关",
+      "summary": "自定义快捷键关屏与亮屏；系统待机、黑屏遮罩和双击 BAT，电脑继续运行。",
+      "category": "桌面效率",
+      "kind": "desktop",
+      "icon": "monitor",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-screen-switch-downloads/releases",
+      "stage": "正式版",
+      "releaseRepo": "lyzbcy/laoyu-screen-switch-downloads",
+      "assetName": "LaoyuScreenSwitch-Windows.zip",
+      "publishedVersion": "1.1.0",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "iconImage": "assets/products/laoyu-screen-switch.png",
+      "videos": [],
+      "fallbackRelease": {
+        "version": "1.1.0",
+        "url": "https://github.com/lyzbcy/laoyu-screen-switch-downloads/releases/download/v1.1.0/LaoyuScreenSwitch-Windows.zip",
+        "sha256": "53f521721faaf7dd223b108105b799b5dcab78e2a77258b563457505f31a2e8a",
+        "sizeBytes": 523896,
+        "name": "LaoyuScreenSwitch-Windows.zip"
+      },
+      "platformDownloads": {
+        "darwin": {
+          "universal": {
+            "assetName": "LaoyuScreenSwitch-macOS-universal.zip"
+          }
+        }
+      }
+    },
+    {
+      "id": "paid-to-watch",
+      "name": "捞鱼桌脚看电视",
+      "summary": "在捞鱼软件推荐卡片中播放本地视频或网页，老板键遮挡并静音。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "monitor",
+      "kind": "desktop",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-desk-tv",
+      "releaseRepo": "lyzbcy/laoyu-desk-tv",
+      "assetPrefix": "laoyu-desk-tv-",
+      "assetSuffix": "-win-x64.zip",
+      "publishedVersion": "0.3.12",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "iconImage": "assets/products/paid-to-watch.png",
+      "videos": [
+        {
+          "id": "7696462267495238966",
+          "title": "捞鱼桌脚看电视 · 使用演示"
+        }
+      ],
+      "fallbackRelease": {
+        "version": "0.3.12",
+        "name": "laoyu-desk-tv-0.3.12-win-x64.zip",
+        "url": "https://github.com/lyzbcy/laoyu-desk-tv/releases/download/v0.3.12/laoyu-desk-tv-0.3.12-win-x64.zip",
+        "sha256": "4d8b30199f4736356889a0c89cd384ed8d2b6368f28522a0b5b2ec48c89280bb",
+        "sizeBytes": 157524594
+      },
+      "backgroundImage": "assets/video-7696462267495238966.jpg"
+    },
+    {
+      "id": "nettools",
+      "name": "捞鱼的网络工具",
+      "summary": "检查网络、按故障修复，并按所选间隔保活。",
+      "category": "开发工具",
+      "stage": "正式版",
+      "icon": "network",
+      "siteUrl": "https://help.wshoto.com/resource/70c3ed19ddbc4a9fa158d585895e683d/f4d7c86e.html",
+      "releaseRepo": "lyzbcy/nettools",
+      "assetPrefix": "nettools-",
+      "assetSuffix": "-win-x64.zip",
+      "kind": "desktop",
+      "iconImage": "assets/products/nettools.png",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "publishedVersion": "5.0.2",
+      "fallbackRelease": {
+        "version": "5.0.2",
+        "name": "nettools-5.0.2-win-x64.zip",
+        "url": "https://github.com/lyzbcy/nettools/releases/download/v5.0.2/nettools-5.0.2-win-x64.zip",
+        "sha256": "5534a8fad042d5645eb34c9ed0cf496d5f1a41755cff8a3d3bba67c817db8478",
+        "sizeBytes": 155509718
+      },
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "nettools-",
+            "assetSuffix": "-mac-arm64.zip",
+            "fallbackRelease": {
+              "version": "5.0.2",
+              "name": "nettools-5.0.2-mac-arm64.zip",
+              "url": "https://github.com/lyzbcy/nettools/releases/download/v5.0.2/nettools-5.0.2-mac-arm64.zip",
+              "sha256": "53307e7eb09e93a1e1cc9621e9e93a350d4373b6be352850e3ea99e5ee8b7344",
+              "sizeBytes": 131371997
+            }
+          },
+          "x64": {
+            "assetPrefix": "nettools-",
+            "assetSuffix": "-mac-x64.zip",
+            "fallbackRelease": {
+              "version": "5.0.2",
+              "name": "nettools-5.0.2-mac-x64.zip",
+              "url": "https://github.com/lyzbcy/nettools/releases/download/v5.0.2/nettools-5.0.2-mac-x64.zip",
+              "sha256": "50af3618348b0d50c1f4eb98759695aa465956976810cd13b6c143eb87c9e892",
+              "sizeBytes": 137063897
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laoyu-disk-cleaner",
+      "name": "捞鱼C盘清理大师",
+      "summary": "查看真实磁盘占用，审查当前用户缓存后再决定是否清理。",
+      "category": "桌面效率",
+      "stage": "正式版",
+      "icon": "folder",
+      "siteUrl": "https://github.com/lyzbcy/laoyu-disk-cleaner-downloads/releases",
+      "kind": "desktop",
+      "videos": [],
+      "iconImage": "assets/products/laoyu-disk-cleaner.png",
+      "releaseRepo": "lyzbcy/laoyu-disk-cleaner-downloads",
+      "assetPrefix": "laoyu-disk-cleaner-",
+      "assetSuffix": "-win-x64.zip",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "laoyu-disk-cleaner-",
+            "assetSuffix": "-mac-arm64.zip",
+            "fallbackRelease": {
+              "version": "2.0.0",
+              "name": "laoyu-disk-cleaner-2.0.0-mac-arm64.zip",
+              "url": "https://github.com/lyzbcy/laoyu-disk-cleaner-downloads/releases/download/v2.0.0/laoyu-disk-cleaner-2.0.0-mac-arm64.zip",
+              "sha256": "13277ecdb91969b3e1c95c3f01aeccceac78d95597b0caa03d190cf449522d2f",
+              "sizeBytes": 133809290
+            }
+          },
+          "x64": {
+            "assetPrefix": "laoyu-disk-cleaner-",
+            "assetSuffix": "-mac-x64.zip",
+            "fallbackRelease": {
+              "version": "2.0.0",
+              "name": "laoyu-disk-cleaner-2.0.0-mac-x64.zip",
+              "url": "https://github.com/lyzbcy/laoyu-disk-cleaner-downloads/releases/download/v2.0.0/laoyu-disk-cleaner-2.0.0-mac-x64.zip",
+              "sha256": "b09669f54c0602ca1f2d52981e0f8cca0afd46f41c755e72145f20fc4b66e240",
+              "sizeBytes": 139446801
+            }
+          }
+        }
+      },
+      "publishedVersion": "2.0.0",
+      "fallbackRelease": {
+        "version": "2.0.0",
+        "name": "laoyu-disk-cleaner-2.0.0-win-x64.zip",
+        "url": "https://github.com/lyzbcy/laoyu-disk-cleaner-downloads/releases/download/v2.0.0/laoyu-disk-cleaner-2.0.0-win-x64.zip",
+        "sha256": "f7cc129546f6a0360c83bd1942739c1bcc6ab113213b5dd60707bc42391a106e",
+        "sizeBytes": 157456167
+      }
+    },
+    {
+      "id": "handdrawn-kline",
+      "name": "我手绘K线，AI急哭了",
+      "summary": "手绘行情逗逗你的 Agent，看它在积木小镇交易、生活，挑战全款买房。",
+      "category": "学习与趣味",
+      "stage": "正式版",
+      "icon": "chart",
+      "kind": "desktop",
+      "iconImage": "assets/products/handdrawn-kline.png",
+      "supportedPlatforms": [
+        "win32",
+        "darwin"
+      ],
+      "videos": [],
+      "siteUrl": "https://github.com/lyzbcy/handdrawn-kline-downloads",
+      "releaseRepo": "lyzbcy/handdrawn-kline-downloads",
+      "releasePage": "https://github.com/lyzbcy/handdrawn-kline-downloads/releases",
+      "assetPrefix": "HanddrawnKline-",
+      "assetSuffix": "-win-x64.exe",
+      "includePrereleases": false,
+      "publishedVersion": "0.1.2",
+      "platformDownloads": {
+        "darwin": {
+          "arm64": {
+            "assetPrefix": "HanddrawnKline-",
+            "assetSuffix": "-mac-arm64.dmg",
+            "includePrereleases": false,
+            "fallbackRelease": {
+              "version": "0.1.0",
+              "name": "HanddrawnKline-0.1.0-mac-arm64.dmg",
+              "url": "https://github.com/lyzbcy/handdrawn-kline-downloads/releases/download/v0.1.0/HanddrawnKline-0.1.0-mac-arm64.dmg",
+              "sha256": "938c3439af53d8e257bbaf5641955f1ccfeaaaeceabdfbdad5a10860b96dd1dd",
+              "sizeBytes": 159676004
+            }
+          }
+        }
+      },
+      "fallbackRelease": {
+        "version": "0.1.2",
+        "name": "HanddrawnKline-0.1.2-win-x64.exe",
+        "url": "https://github.com/lyzbcy/handdrawn-kline-downloads/releases/download/v0.1.2/HanddrawnKline-0.1.2-win-x64.exe",
+        "sha256": "2f6cec03058d9a027dccb7b052890623bebc8ce2103c2724a6e8ee88f32ea967",
+        "sizeBytes": 171773743
+      }
+    }
+  ]
+}
