@@ -14,7 +14,7 @@
       "releasePage": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases",
       "assetPrefix": "LaoyuVideoQuality-",
       "assetSuffix": "-win-x64.exe",
-      "publishedVersion": "0.26.35",
+      "publishedVersion": "0.26.40",
       "iconImage": "assets/products/laoyu-video-quality.png",
       "videos": [],
       "supportedPlatforms": [
@@ -22,11 +22,11 @@
         "darwin"
       ],
       "fallbackRelease": {
-        "version": "0.26.35",
-        "name": "LaoyuVideoQuality-0.26.35-win-x64.exe",
-        "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.35/LaoyuVideoQuality-0.26.35-win-x64.exe",
-        "sha256": "033768a0e97b6041331a43c2a700e59188f4766e5bc05d52b42a8e006ec7ee4a",
-        "sizeBytes": 148024088
+        "version": "0.26.40",
+        "name": "LaoyuVideoQuality-0.26.40-win-x64.exe",
+        "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.40/LaoyuVideoQuality-0.26.40-win-x64.exe",
+        "sha256": "dc3b7e92f2bdd7c55d8d662426a0e7c6b096a05abddc33a62eea610990d6fff8",
+        "sizeBytes": 148040723
       },
       "platformDownloads": {
         "darwin": {
@@ -34,11 +34,11 @@
             "assetPrefix": "LaoyuVideoQuality-",
             "assetSuffix": "-mac-arm64.zip",
             "fallbackRelease": {
-              "version": "0.26.35",
-              "name": "LaoyuVideoQuality-0.26.35-mac-arm64.zip",
-              "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.35/LaoyuVideoQuality-0.26.35-mac-arm64.zip",
-              "sha256": "e27a0116666e114b4553ad7f47afdf7628bc0a3a781224b0b1cc641a963c8227",
-              "sizeBytes": 127488314
+              "version": "0.26.40",
+              "name": "LaoyuVideoQuality-0.26.40-mac-arm64.zip",
+              "url": "https://github.com/lyzbcy/laoyu-video-quality-downloads/releases/download/v0.26.40/LaoyuVideoQuality-0.26.40-mac-arm64.zip",
+              "sha256": "1c348bb2e10c166e5a4f9e7d5eae6ce1ed52efe2c44252cd9c9cbe53f330da81",
+              "sizeBytes": 127507113
             }
           }
         }
