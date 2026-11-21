@@ -5649,5 +5649,154 @@
         "updatedAt": "2026-11-20T09:10:09.849478+00:00"
       }
     ]
+  },
+  {
+    "date": "2026-11-21",
+    "products": [
+      {
+        "id": "airpods-buddy",
+        "count": 882,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "local-run-frontend",
+        "count": 15,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "xuhuohua",
+        "count": 192,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "sticker-maker",
+        "count": 87,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "yijian-toudi",
+        "count": 36,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-tagger",
+        "count": 3,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "miaomiao-tools",
+        "count": 212,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "experiment-report",
+        "count": 70,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "fanqie-publisher",
+        "count": 13,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "douyin-comment",
+        "count": 13,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "general-knowledge",
+        "count": null,
+        "status": "untracked",
+        "updatedAt": null
+      },
+      {
+        "id": "computer-knowledge",
+        "count": null,
+        "status": "untracked",
+        "updatedAt": null
+      },
+      {
+        "id": "os-study",
+        "count": null,
+        "status": "untracked",
+        "updatedAt": null
+      },
+      {
+        "id": "gaokao-time-machine",
+        "count": null,
+        "status": "untracked",
+        "updatedAt": null
+      },
+      {
+        "id": "jiahao-test",
+        "count": null,
+        "status": "untracked",
+        "updatedAt": null
+      },
+      {
+        "id": "laoyu-sync",
+        "count": 219,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-screen-switch",
+        "count": 53,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "paid-to-watch",
+        "count": 95,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "nettools",
+        "count": 54,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-disk-cleaner",
+        "count": 18,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "handdrawn-kline",
+        "count": 52,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-whale-deployer",
+        "count": 13,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-usage-sprite",
+        "count": 22,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      },
+      {
+        "id": "laoyu-video-quality",
+        "count": 42,
+        "status": "ok",
+        "updatedAt": "2026-11-21T08:45:09.088027+00:00"
+      }
+    ]
   }
 ]
